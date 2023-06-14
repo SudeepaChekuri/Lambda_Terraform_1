@@ -1,8 +1,9 @@
 provider "aws" {
   region = var.aws_region
 }
-provider "hashicorp/lambda" {
-  version = "2.0.0"
+provider "aws" {
+  alias  = "lambda"
+  region = var.aws_region
 }
 resource "aws_iam_role" "lambda_role" {
   name               = var.lambda_role_name
