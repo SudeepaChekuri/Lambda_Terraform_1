@@ -15,7 +15,7 @@ jobs:
 
       - name: Print Lambda Function Code
         run: |
-          cat "example-lambda-function.py"
+          cat "example_lambda_function.py"
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
