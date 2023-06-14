@@ -13,7 +13,7 @@ variable "lambda_role_name" {
 variable "lambda_function_name" {
   description = "Name of the Lambda function"
   type        = string
-  default     = "example-lambda-function"
+  default     = "example_lambda_function"
 }
 
 variable "lambda_handler" {
