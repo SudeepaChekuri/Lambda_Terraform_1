@@ -1,10 +1,10 @@
 provider "aws" {
   region = var.aws_region
 }
-provider "aws" {
-  alias  = "lambda"
-  region = var.aws_region
-}
+#provider "aws" {
+ # alias  = "lambda"
+  #region = var.aws_region}
+
 resource "aws_iam_role" "lambda_role" {
   name               = var.lambda_role_name
   assume_role_policy = <<EOF
