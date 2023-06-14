@@ -33,8 +33,8 @@ resource "aws_lambda_function" "example_lambda_function" {
   runtime          = var.lambda_runtime
   timeout          = var.lambda_timeout
   memory_size      = var.lambda_memory
-  filename         = "example_lambda_function.py"
-  source_code_hash = filebase64sha256("example_lambda_function.py")
+  #filename         = "example_lambda_function.py"
+  #source_code_hash = filebase64sha256("example_lambda_function.py")
 
   # Use S3 bucket as the deployment package source
   s3_bucket        = var.lambda_s3_bucket
