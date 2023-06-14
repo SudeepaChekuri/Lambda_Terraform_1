@@ -1,12 +1,11 @@
-terraform {
   provider "aws" {
   region = var.aws_region
 }
-}
+
 #provider "aws" {
  # alias  = "lambda"
   #region = var.aws_region}
-
+terraform {
 resource "aws_iam_role" "lambda_role" {
   name               = var.lambda_role_name
   assume_role_policy = <<EOF
@@ -55,4 +54,5 @@ resource "aws_lambda_function" "example_lambda_function" {
       EXAMPLE_VARIABLE = "example-value"
     }
   }
+}
 }
