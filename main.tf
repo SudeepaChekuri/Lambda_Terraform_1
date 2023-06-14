@@ -19,7 +19,7 @@ resource "aws_iam_role" "lambda_role" {
 }
 EOF
 }
-resource "aws_s3_bucket" "example_bucket" {
+resource "lambda_s3_bucket" "example_bucket" {
   bucket = "lambda_s3_bucket"
   # Add other configuration options for the bucket, if needed
 }
@@ -42,7 +42,7 @@ resource "aws_lambda_function" "example_lambda_function" {
   #source_code_hash = filebase64sha256("example_lambda_function.py")
 
   # Use S3 bucket as the deployment package source
-  s3_bucket        = aws_s3_bucket.example_bucket.bucket
+  s3_bucket        = lambda_s3_bucket.example_bucket.bucket
   s3_key           = "example_lambda_function.zip"
 
   environment {
