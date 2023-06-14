@@ -45,4 +45,4 @@ resource "aws_lambda_function" "example_lambda_function" {
       EXAMPLE_VARIABLE = "example-value"
     }
   }
-}
+} 
