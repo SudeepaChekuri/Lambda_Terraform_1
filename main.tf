@@ -26,7 +26,7 @@ resource "aws_iam_policy_attachment" "lambda_policy_attachment" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-resource "aws_lambda_function" "example_lambda" {
+resource "aws_lambda_function" "example_lambda_function" {
   function_name    = var.lambda_function_name
   role             = aws_iam_role.lambda_role.arn
   handler          = var.lambda_handler
@@ -34,7 +34,7 @@ resource "aws_lambda_function" "example_lambda" {
   timeout          = var.lambda_timeout
   memory_size      = var.lambda_memory
   filename         = ""
-  source_code_hash = filebase64sha256("example-lambda-function.py")
+  source_code_hash = filebase64sha256("example_lambda_function.py")
 
   # Use S3 bucket as the deployment package source
   s3_bucket        = var.lambda_s3_bucket
