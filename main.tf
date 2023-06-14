@@ -1,5 +1,7 @@
-provider "aws" {
+terraform {
+  provider "aws" {
   region = var.aws_region
+}
 }
 #provider "aws" {
  # alias  = "lambda"
